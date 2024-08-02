@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Shikoyatlar
+{% endblock %}
+
+{% block content %}
+ <div class="container">
+    <h1>Shikoyatlar qoshish </h1>
+    <form method="post" action="">
+     {% csrf_token %}
+        <label for="description">shikoyatlar qoshish</label>
+<textarea class="form-control" rows="5" id="comment" name="description"></textarea><br><br><br>
+          <input type="submit" class="form-control btn btn-primary"  name="submit"><br><br><br><br><br>
+
+  
+          
+    </form>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+     
+<section class="tm-section row menu">
+    <div class="col-lg-12 tm-section-header-container margin-bottom-30">
+        <h2 class="tm-section-header gold-text tm-handwriting-font">
+            <img src="{% static 'img/logo.jpg' %}" alt="Logo" class="tm-site-logo"> Our Menus
+        </h2>
+        <div class="tm-hr-container"><hr class="tm-hr"></div>
+    </div>
+
+    <div class="container">
+        <h2>Coffees</h2>
+        <div class="menu-items">
+            {% for coffee in coffees%}
+                <div class="menu-item">
+                    <img src="{{ coffee.image.url }}" alt="{{ coffee.name }}">
+                    <h3>{{ coffee.name }}</h3>
+                    <p>{{ coffee.info }}</p>
+                    <h4 style="color: rgba(0,0,0,0.7);">{{ coffee.price }}</h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div> 
+                      
+    <div class="container">
+        <h2>Cakes</h2>
+        <div class="menu-items">
+            {% for cake in cakes %}
+                <div class="menu-item">
+                    <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
+                    <h3>{{ cake.name }}</h3>
+                    <p>{{ cake.info }}</p>
+                    <h4 style="color: rgba(0,0,0,0.7);">{{ cake.price }}</h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>    
+</section>
+
+{% endblock %}

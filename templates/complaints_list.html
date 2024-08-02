@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+	Admin uchun
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Complaints</h1>
+
+        <ul>
+            {% for Complaints in Complaints %}
+                <li>{{ Complaints.description }}</li>
+            {% empty %}
+                <li>No complaints yet.</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+
+{% endblock %}
